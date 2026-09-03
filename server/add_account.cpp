@@ -17,7 +17,7 @@ int add_account(QString qusername, QString qpassword,int flag)
     // Открываем тестовую базу
     if (sqlite3_open("test.db", &db) != SQLITE_OK) {
         cout << "Ошибка открытия базы!" << endl;
-        return code_eror_open_db;
+        return code_eror_OpenDb;
     }
     sqlite3_stmt *stmt = nullptr;
     if(flag==0){

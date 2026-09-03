@@ -13,4 +13,4 @@ This project was created for **educational purposes** to dive deep into network 
 Parts of this codebase may contain minor traces of AI assistance (for brainstorming or debugging), but the vast majority of the code is written and structured by the author to practice, learn, and master modern C++.
 
 ## 🚀 Status
-Active development. Focused on clean packet routing, protocol design (`Type-Length-Value` pattern), and reliable TCP stream handling.
+Active development. Focused on clean packet routing, protocol design (`Type-Length-Value` pattern), and reliable TCP stream handling.g

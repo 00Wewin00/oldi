@@ -21,7 +21,7 @@ int handlePacket(QByteArray block){
             int result_check_account =check_account(buffer_struct.username, buffer_struct.password);
             switch(result_check_account){
                 case code_succes: {
-                // * dobawit esli polzowtel wwel horoszyj parol i imja  
+                    
                     break;
                 }
             }
