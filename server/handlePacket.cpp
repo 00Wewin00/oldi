@@ -1,10 +1,6 @@
 #include "logic.h"
-#include "db.h"
-#include <iostream>
-#include <mutex>
+#include "common.h"
 #include <qobject.h>
-#include <string>
-#include <thread>
 #include <QString>
 #include <QIODevice>
 using namespace std;
@@ -18,13 +14,7 @@ int handlePacket(QByteArray block){
             in>>buffer_struct;
             if(in.status()!=QDataStream::Ok){
                 return code_eror_IncompleteData;
-            int result_check_account =check_account(buffer_struct.username, buffer_struct.password);
-            switch(result_check_account){
-                case code_succes: {
-                    
-                    break;
-                }
-            }
+            
             }
             break;
         }

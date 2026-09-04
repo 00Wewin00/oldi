@@ -1,4 +1,5 @@
 #include "db.h"
+#include "common.h"
 #include "logic.h"
 #include <algorithm>
 #include <cstdint>

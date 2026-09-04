@@ -1,4 +1,5 @@
-#include "db.h"
+#include "../db.h"
+#include "../common.h"
 #include <iostream>
 #include <netinet/in.h>
 #include <sqlite3.h>
