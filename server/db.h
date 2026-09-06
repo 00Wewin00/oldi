@@ -8,14 +8,5 @@
 #include <variant>
 #include "common.h"
 using namespace std;
-
-using Packet_data =variant<logindata,registerdata>;
-struct Packet 
-{
-    int type;
-    Packet_data Data_info;
-};
-// Объявление функции (сигнатура)
-int add_account(QString qusername, QString qpassword,int flag);
-int check_account(QString qusername,QString qpassword);
+int check_element(string db,string collune,string SearchTerm,string filter_1,string filter_2,int count);
 #endif

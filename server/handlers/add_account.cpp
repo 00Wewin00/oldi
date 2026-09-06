@@ -1,4 +1,3 @@
-#include "../db.h"
 #include "../common.h"
 #include <iostream>
 #include <netinet/in.h>
@@ -9,8 +8,7 @@
 #include <vector>
 #include <QString>
 using namespace std;
-int add_account(QString qusername, QString qpassword,int flag)
-{
+int add_account(QString qusername, QString qpassword,int flag){
     int code=code_eror;
     string username = qusername.toStdString();
     string password = qpassword.toStdString();
@@ -30,7 +28,8 @@ int add_account(QString qusername, QString qpassword,int flag)
             // Проверяем, была ли реально добавлена строка
             if (sqlite3_changes(db) > 0) {
                 code=code_succes;
-            } else {
+            } 
+            else {
                 code=code_fail;
             }
         }
@@ -43,7 +42,8 @@ int add_account(QString qusername, QString qpassword,int flag)
             sqlite3_step(stmt);
             if (sqlite3_changes(db) > 0) {
                 code=code_succes;
-            } else {
+            }
+            else {
                 code=code_eror;
             }
         }

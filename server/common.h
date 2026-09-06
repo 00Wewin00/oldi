@@ -42,7 +42,6 @@ struct logindata
     };
     int flag_1=0;
     int flag_2=0;
-
 };
 struct registerdata
 {

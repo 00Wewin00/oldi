@@ -16,11 +16,11 @@ int handlePacket(QByteArray block){
                 return code_eror_IncompleteData;
             
             }
+            
             break;
         }
         default:
-
         break;
     }
-
+    // ! Need to add "return int"
 }

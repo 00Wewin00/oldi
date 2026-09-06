@@ -22,25 +22,19 @@
 #include <QIODevice>
 using namespace std;
 mutex clients_mutex;
-void handle_auth(int client_socket, vector<ClientInfo> &client)
-{
-    Packet buffer;
+void handle_auth(int client_socket, vector<ClientInfo> &client){
     bool login = true;
-    while (login) 
-    {
-        
+    while (login) {
         uint32_t packet_size = 0;
         uint32_t byet_result=0;
         while(byet_result!=4){
         int byet = recv(client_socket, &packet_size, sizeof(int), 0);
         if (byet <= 0) {
-       // Клиент отключился или произошла ошибка
         return;
         }
         byet_result+=byet;
     }
-        if (packet_size > 1024 * 64)
-        {
+        if (packet_size > 1024 * 64){
             return;
         }
         QByteArray block;
@@ -54,8 +48,7 @@ void handle_auth(int client_socket, vector<ClientInfo> &client)
         handlePacket(block);
     }
 }
-void podkluczenie(vector<ClientInfo> &client, int serverfd)
-{
+void podkluczenie(vector<ClientInfo> &client, int serverfd){
     if (listen(serverfd, 5) < 0) {
         cout << "Ошибка при вызове listen!\n";
         return;
