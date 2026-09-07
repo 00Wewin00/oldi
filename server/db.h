@@ -8,5 +8,5 @@
 #include <variant>
 #include "common.h"
 using namespace std;
-int check_element(string db,string collune,string SearchTerm,string filter_1,string filter_2,int count);
+int check_element(string db_open,string table,string SearchTerm,string key_1,string key_2,string filter_1,string filter_2,int count);
 #endif
