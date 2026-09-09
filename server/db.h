@@ -9,4 +9,5 @@
 #include "common.h"
 using namespace std;
 int check_element(string db_open,string table,string SearchTerm,string key_1,string key_2,string filter_1,string filter_2,int count);
+DbValue Select_element();
 #endif

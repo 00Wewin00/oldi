@@ -1,8 +1,11 @@
 #ifndef COMMON_H
 #define COMMON_H
 #include <QString>
+#include <cstdint>
 #include <qobject.h>
+#include <variant>
 using namespace std;
+using DbValue= variant<int64_t,monostate,string>;
 struct ClientInfo{
     int socket;
     string username;
