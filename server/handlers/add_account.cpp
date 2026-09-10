@@ -3,9 +3,6 @@
 #include <netinet/in.h>
 #include <sqlite3.h>
 #include <string>
-#include <sys/socket.h>
-#include <unistd.h>
-#include <vector>
 #include <QString>
 using namespace std;
 int add_account(QString qusername, QString qpassword,int flag){

@@ -23,4 +23,5 @@ int handlePacket(QByteArray block){
         break;
     }
     // ! Need to add "return int"
+    return code_eror;
 }
