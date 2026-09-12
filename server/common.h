@@ -9,7 +9,7 @@ using namespace std;
 using DbValue= variant<int64_t,monostate,string>;
 struct ClientInfo{
     int socket;
-    string username;
+    int id;
 };
 enum status_code{
     status_OK,

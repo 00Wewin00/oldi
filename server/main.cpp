@@ -1,27 +1,15 @@
-#include "db.h"
 #include "common.h"
 #include "logic.h"
-#include <algorithm>
-#include <cstdint>
-#include <cstdio>
-#include <cstring>
+#include "server/server.h"
 #include <iostream>
 #include <mutex>
 #include <netinet/in.h>
-#include <qcontainerfwd.h>
-#include <qstringview.h>
-#include <sqlite3.h>
-#include <sstream>
-#include <string>
 #include <sys/socket.h>
 #include <thread>
 #include <unistd.h>
 #include <vector>
-#include <variant>
 #include <QString>
-#include <QIODevice>
 using namespace std;
-mutex clients_mutex;
 void handle_auth(int client_socket, vector<ClientInfo> &client){
     bool login = true;
     while (login) {
@@ -70,12 +58,12 @@ int main()
     address.sin_addr.s_addr = INADDR_ANY;
     address.sin_port = htons(8080);
     // 3. Подключаем аппарат к розетке
-    bind(server_fd, (struct sockaddr *) &address, sizeof(address));
-    // 4. Переводим в режим "жду звонка"
-    vector<ClientInfo> clients;
+    int hz_zaczem_no_nurzno=bind(server_fd, (struct sockaddr *) &address, sizeof(address));
+    lock_guard<mutex>lock(global_clients);
     thread prosluszka(podkluczenie, ref(clients), server_fd);
     prosluszka.detach();
     //close(clients);
+    global_clients.unlock();
     while (true) {
         sleep(1);
     }
